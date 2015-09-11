@@ -13,6 +13,10 @@ sudo vi /etc/apache2/sites-enabled/000-default.conf
 
 RAILS_ENV=production rake secret
 sudo vi /etc/profile
+
+Append:
+  export SECRET_KEY_BASE=[OUTPUT_FROM_PREVIOUS_COMMAND]
+
 sudo vi config/environments/production.rb
 
 Add:
