@@ -11,5 +11,14 @@ sudo apt-get install libapache2-mod-passenger
 
 sudo vi /etc/apache2/sites-enabled/000-default.conf
 
+RAILS_ENV=production rake secret
+sudo vi /etc/profile
+sudo vi config/environments/production.rb
+
+Add:
+  # Tell Rails where to loook for the secret key base
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
+
 sudo /etc/init.d/apache2 reload
 sudo /etc/init.d/apache2 restart
