@@ -1,4 +1,9 @@
 class ProceduresController < ApplicationController
+
+	def show
+    	@procedure = Procedure.find(params[:id])
+  	end
+
     def new
     end
 
@@ -7,4 +12,6 @@ class ProceduresController < ApplicationController
     	@procedure.save
     	redirect_to @procedure    
     end
+
+
 end
