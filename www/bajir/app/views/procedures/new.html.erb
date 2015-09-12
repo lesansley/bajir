@@ -1,1 +1,16 @@
 <h1>New Procedure</h1>
+<%= form_for :procedure, url: procedures_path do |f| %>
+  <p>
+    <%= f.label :tnumber %><br>
+    <%= f.text_field :tnumber %>
+  </p>
+ 
+  <p>
+    <%= f.label :procedureDate %><br>
+    <%= f.date_field :procedureDate %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
