@@ -9,13 +9,21 @@ class ProceduresController < ApplicationController
   	end
 
     def new
+    	@procedure = Procedure.new
     end
 
     def create
-    	@procedure = Procedure.new(params.require(:procedure).permit(:tnumber, :procedureDate))
-    	@procedure.save
-    	redirect_to @procedure    
+    	@procedure = Procedure.new(procedure_params)
+    	if @procedure.save
+    		redirect_to @procedure
+    	else
+    		render 'new'
+    	end
     end
 
+private
+	def procedure_params
+		params.require(:procedure).permit(:tnumber, :procedureDate)
+	end
 
 end
