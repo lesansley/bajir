@@ -1,24 +1,31 @@
 sudo apt-get update
 sudo apt-get install ruby-full build-essential
-sudo apt-get install build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev libmysqlclient-dev libpcre3-dev libcurl4-openssl-dev mysql-client-core-5.5 openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison nodejs subversion
-gem install rails
-mkdir /home/ubuntu/www
-cd /home/ubuntu/www
+sudo apt-get install build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev libmysqlclient-dev libpcre3-dev libcurl4-openssl-dev mysql-client-core-5.5 openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison nodejs subversion apache2 apache2-mpm-prefork apache2-prefork-dev libapache2-mod-passenger
+
+sudo gem install rails
+
+cd /home/ubuntu
+git clone https://github.com/lesansley/bajir.git
+
+cd /home/ubuntu/bajir/www
 rails new bajir
-sudo apt-get install apache2 apache2-mpm-prefork apache2-prefork-dev
-gem install passenger
-gem install dotenv
-sudo apt-get install libapache2-mod-passenger
+sudo gem install passenger
+sudo gem install dotenv
 
 sudo vi /etc/apache2/sites-enabled/000-default.conf
 
+cd /home/ubuntu/bajir/www/bajir
+bundle install
+
 RAILS_ENV=production rake secret
-sudo vi /home/ubuntu/www/bajir/.env
+sudo vi /home/ubuntu/bajir/www/bajir/.env
 
 Insert:
   SECRET_KEY_BASE=[OUTPUT_FROM_PREVIOUS_COMMAND]
 
-bundle
+
+
 
 sudo /etc/init.d/apache2 reload
 sudo /etc/init.d/apache2 restart
+
