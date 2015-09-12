@@ -1,0 +1,15 @@
+<h1>Listing procedures</h1>
+ 
+<table>
+  <tr>
+    <th>T Number</th>
+    <th>Procedure Date</th>
+  </tr>
+ 
+  <% @procedures.each do |procedure| %>
+    <tr>
+      <td><%= procedure.tnumber %></td>
+      <td><%= procedure.procedureDate %></td>
+    </tr>
+  <% end %>
+</table>
