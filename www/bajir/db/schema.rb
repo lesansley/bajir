@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914113538) do
+ActiveRecord::Schema.define(version: 20150914120811) do
 
   create_table "procedures", force: :cascade do |t|
     t.string   "tnumber"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20150914113538) do
 
   create_table "surveytemplates", force: :cascade do |t|
     t.string   "name"
-    t.text     "definition"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
