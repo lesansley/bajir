@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914101621) do
+ActiveRecord::Schema.define(version: 20150914102916) do
 
   create_table "procedures", force: :cascade do |t|
     t.string   "tnumber"
@@ -20,14 +20,7 @@ ActiveRecord::Schema.define(version: 20150914101621) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "questionnaire_templates", force: :cascade do |t|
-    t.string   "questionnaireName"
-    t.text     "questionnaireDefinition"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
-  create_table "questionnaires", force: :cascade do |t|
+  create_table "surveyresponses", force: :cascade do |t|
     t.string   "username"
     t.string   "type"
     t.date     "date"
@@ -37,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150914101621) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "questionnaires", ["procedure_id"], name: "index_questionnaires_on_procedure_id"
+  add_index "surveyresponses", ["procedure_id"], name: "index_surveyresponses_on_procedure_id"
 
   create_table "surveytemplates", force: :cascade do |t|
     t.string   "surveyName"
