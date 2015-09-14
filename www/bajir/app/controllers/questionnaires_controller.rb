@@ -17,4 +17,3 @@ class QuestionnairesController < ApplicationController
         params.require(:questionnaire).permit(:username, :date, :score)
     end
 end
-s
