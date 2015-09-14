@@ -2,11 +2,30 @@
   <strong>T Number:</strong>
   <%= @procedure.tnumber %>
 </p>
- 
+
 <p>
   <strong>Procedure Date:</strong>
   <%= @procedure.procedureDate %>
 </p>
+
+<h2>Add a Questionnaire Response:</h2>
+<%= form_for([@aprocedure, @procedure.questionnaires.build]) do |f| %>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.date_field :date %>
+  </p>
+  <p>
+    <%= f.label :score %><br>
+    <%= f.text_area :score %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_procedure_path(@procedure) %> |
 <%= link_to 'Back', procedures_path %>
