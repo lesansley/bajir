@@ -1,4 +1,5 @@
 class Procedure < ActiveRecord::Base
-	validates :tnumber, presence: true,
+	has_many :questionnaires
+    validates :tnumber, presence: true,
 					length: { minimum: 5 }
 end
