@@ -1,0 +1,2 @@
+class SurveytemplatesController < ApplicationController
+end
