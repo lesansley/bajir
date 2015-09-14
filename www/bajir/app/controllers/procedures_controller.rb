@@ -1,5 +1,5 @@
 class ProceduresController < ApplicationController
-	
+
 	def index
     	@procedures = Procedure.all
   	end
@@ -27,7 +27,7 @@ class ProceduresController < ApplicationController
 
     def update
   		@procedure = Procedure.find(params[:id])
- 
+
   		if @procedure.update(procedure_params)
     		redirect_to @procedure
   		else
@@ -36,9 +36,9 @@ class ProceduresController < ApplicationController
 	end
 
 	def destroy
-  		@procedure = Article.find(params[:id])
+  		@procedure = Procedure.find(params[:id])
   		@procedure.destroy
- 
+
   		redirect_to procedures_path
 	end
 
