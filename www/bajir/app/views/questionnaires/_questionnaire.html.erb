@@ -13,4 +13,10 @@
     <strong>Score:</strong>
     <%= questionnaire.score %>
   </p>
+
+  <p>
+    <%= link_to 'Destroy Questionnaire', [questionnaire.procedure, questionnaire],
+     method: :delete,
+     data: { confirm: 'Are you sure?' } %>
+  </p>
 <% end %>

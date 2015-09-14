@@ -5,8 +5,16 @@ class QuestionnairesController < ApplicationController
         redirect_to procedure_path(@procedure)
     end
 
+    def destroy
+        @procedure = Procedure.find(params[:procedure_id])
+        @questionnaire = @procedure.questionnaires.find(params[:id])
+        @questionnaire.destroy
+        redirect_to procedure_path(@procedure)
+    end
+
     private
         def questionnaire_params
         params.require(:questionnaire).permit(:username, :date, :score)
     end
 end
+s
