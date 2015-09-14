@@ -1,21 +1,20 @@
+<p>
+  <strong>Username:</strong>
+  <%= questionnaire.username %>
+</p>
 
-  <p>
-    <strong>Username:</strong>
-    <%= questionnaire.username %>
-  </p>
+<p>
+  <strong>Date:</strong>
+  <%= questionnaire.date %>
+</p>
 
-  <p>
-    <strong>Date:</strong>
-    <%= questionnaire.date %>
-  </p>
+ <p>
+  <strong>Score:</strong>
+  <%= questionnaire.score %>
+</p>
 
-   <p>
-    <strong>Score:</strong>
-    <%= questionnaire.score %>
-  </p>
-
-  <p>
-    <%= link_to 'Destroy Questionnaire', [questionnaire.procedure, questionnaire],
-     method: :delete,
-     data: { confirm: 'Are you sure?' } %>
-  </p>
+<p>
+  <%= link_to 'Destroy Questionnaire', [questionnaire.procedure, questionnaire],
+   method: :delete,
+   data: { confirm: 'Are you sure?' } %>
+</p>
