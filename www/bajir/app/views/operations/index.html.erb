@@ -1,0 +1,21 @@
+<h1>Listing operations</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @operations.each do |operation| %>
+    <tr>
+      <td><%= operation.code %></td>
+      <td><%= operation.description %></td>
+      <td><%= link_to 'Show', operation_path(procedure) %></td>
+      <td><%= link_to 'Edit', edit_operation_path(operation) %></td>
+      <td><%= link_to 'Destroy', operation_path(operation),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

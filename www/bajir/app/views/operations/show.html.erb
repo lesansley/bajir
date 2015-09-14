@@ -1,0 +1,12 @@
+<p>
+  <strong>Code:</strong>
+  <%= @operation.code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @operation.description %>
+</p>
+
+<%= link_to 'Edit', edit_operation_path(@operation) %> |
+<%= link_to 'Back', operation_path %>
