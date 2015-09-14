@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 # use redcarpet for guides
 gem 'redcarpet', '~> 3.1.2'
+# use json-pure for serialising and deserialising into JSON
+gem 'json'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
