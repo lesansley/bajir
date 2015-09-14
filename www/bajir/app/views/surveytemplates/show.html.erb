@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @surveytemplate.name %>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+  <%= @surveytemplate.definition %>
+</p>
+
+<%= link_to 'Edit', edit_surveytemplate_path(@surveytemplate) %> |
+<%= link_to 'Back', surveytemplates_path %>
