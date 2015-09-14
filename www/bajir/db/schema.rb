@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914135000) do
+ActiveRecord::Schema.define(version: 20150914151405) do
 
   create_table "operations", force: :cascade do |t|
     t.string   "code"
@@ -36,15 +36,17 @@ ActiveRecord::Schema.define(version: 20150914135000) do
   add_index "questionlists", ["surveytemplate_id"], name: "index_questionlists_on_surveytemplate_id"
 
   create_table "questions", force: :cascade do |t|
-    t.string   "questionText"
-    t.integer  "optionKey"
-    t.string   "optionValue"
-    t.integer  "questionlist_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "question"
+    t.string   "answerParameters"
+    t.integer  "maxValue"
+    t.integer  "minValue"
+    t.integer  "type"
+    t.integer  "surveytemplate_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
-  add_index "questions", ["questionlist_id"], name: "index_questions_on_questionlist_id"
+  add_index "questions", ["surveytemplate_id"], name: "index_questions_on_surveytemplate_id"
 
   create_table "surveyresponses", force: :cascade do |t|
     t.string   "username"

@@ -18,7 +18,7 @@ class SurveytemplatesController < ApplicationController
     def create
         @surveytemplate = Surveytemplate.new(surveytemplate_params)
         if @surveytemplate.save
-            redirect_to @surveytemplate
+            render 'edit'
         else
             render 'new'
         end

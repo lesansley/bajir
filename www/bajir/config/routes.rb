@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :surveytemplates do
-    resources :questionlists do
-      resources :questions
-    end
+    resources :questions 
   end
 
   resources :operations
