@@ -1,3 +1,3 @@
 class Question < ActiveRecord::Base
-  belongs_to :questionlist
+  belongs_to :surveytemplate
 end

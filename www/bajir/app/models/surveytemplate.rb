@@ -1,3 +1,3 @@
 class Surveytemplate < ActiveRecord::Base
-	has_one :questionlists, dependent: :destroy
+	has_many :questions, dependent: :destroy
 end
