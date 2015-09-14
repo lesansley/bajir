@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  type: 
+  date: 2015-09-14
+  score: MyText
+  procedure_id: 
+
+two:
+  username: MyString
+  type: 
+  date: 2015-09-14
+  score: MyText
+  procedure_id: 
