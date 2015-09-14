@@ -1,0 +1,16 @@
+<% @procedure.questionnaires.each do |questionnaire| %>
+  <p>
+    <strong>Username:</strong>
+    <%= questionnaire.username %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= questionnaire.date %>
+  </p>
+
+   <p>
+    <strong>Score:</strong>
+    <%= questionnaire.score %>
+  </p>
+<% end %>
