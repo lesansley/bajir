@@ -8,6 +8,24 @@
   <%= @procedure.procedureDate %>
 </p>
 
+<h2>Completed Questionnaires</h2>
+<% @procedure.questionnaires.each do |questionnaire| %>
+  <p>
+    <strong>Username:</strong>
+    <%= questionnaire.username %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= questionnaire.date %>
+  </p>
+
+   <p>
+    <strong>Score:</strong>
+    <%= questionnaire.score %>
+  </p>
+<% end %>
+
 <h2>Add a Questionnaire Response:</h2>
 <%= form_for([@aprocedure, @procedure.questionnaires.build]) do |f| %>
   <p>
