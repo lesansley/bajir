@@ -9,10 +9,13 @@
 </p>
 
 <h2>Completed Questionnaires</h2>
-<%= render @procedure.questionnaires %>
+<%= render @procedure.surveyresponses %>
 
 <h2>Add a Questionnaire Response:</h2>
-<%= render 'questionnaires/form' %>
+<%= render 'surveyresponses/form' %>
+
+<h2>Create a Questionnaire</h2>
+<%= render @
 
 <%= link_to 'Edit', edit_procedure_path(@procedure) %> |
 <%= link_to 'Back', procedures_path %>
