@@ -1,20 +1,20 @@
 <p>
   <strong>Username:</strong>
-  <%= questionnaire.username %>
+  <%= surveyresponse.username %>
 </p>
 
 <p>
   <strong>Date:</strong>
-  <%= questionnaire.date %>
+  <%= surveyresponse.date %>
 </p>
 
  <p>
   <strong>Score:</strong>
-  <%= questionnaire.score %>
+  <%= surveyresponse.score %>
 </p>
 
 <p>
-  <%= link_to 'Destroy Questionnaire', [questionnaire.procedure, questionnaire],
+  <%= link_to 'Destroy survey response', [surveyresponse.procedure, surveyresponse],
    method: :delete,
    data: { confirm: 'Are you sure?' } %>
 </p>

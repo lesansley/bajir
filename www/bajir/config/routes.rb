@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   #create a resource
   resources :procedures do
-    resources :questionnaires
+    resources :surveyresponses
   end
 
   resources :surveytemplates

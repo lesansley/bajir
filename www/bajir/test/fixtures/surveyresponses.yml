@@ -3,13 +3,15 @@
 one:
   username: MyString
   type: 
-  date: 2015-09-14
-  score: MyText
+  date: MyString
+  score: MyString
+  text: MyString
   procedure_id: 
 
 two:
   username: MyString
   type: 
-  date: 2015-09-14
-  score: MyText
+  date: MyString
+  score: MyString
+  text: MyString
   procedure_id: 
