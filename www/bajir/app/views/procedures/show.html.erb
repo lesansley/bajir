@@ -27,7 +27,7 @@
 <% end %>
 
 <h2>Add a Questionnaire Response:</h2>
-<%= form_for([@aprocedure, @procedure.questionnaires.build]) do |f| %>
+<%= form_for([@procedure, @procedure.questionnaires.build]) do |f| %>
   <p>
     <%= f.label :username %><br>
     <%= f.text_field :username %>
