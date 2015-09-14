@@ -27,6 +27,25 @@ ActiveRecord::Schema.define(version: 20150914135000) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "questionlists", force: :cascade do |t|
+    t.integer  "surveytemplate_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "questionlists", ["surveytemplate_id"], name: "index_questionlists_on_surveytemplate_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "questionText"
+    t.integer  "optionKey"
+    t.string   "optionValue"
+    t.integer  "questionlist_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "questions", ["questionlist_id"], name: "index_questions_on_questionlist_id"
+
   create_table "surveyresponses", force: :cascade do |t|
     t.string   "username"
     t.string   "type"

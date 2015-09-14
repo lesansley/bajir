@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     resources :surveyresponses
   end
 
-  resources :surveytemplates
+  resources :surveytemplates do
+    resources :questionlists do
+      resources :questions
+    end
+  end
 
   resources :operations
 
