@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 20150914151405) do
+||||||| merged common ancestors
+ActiveRecord::Schema.define(version: 20150914135000) do
+=======
+ActiveRecord::Schema.define(version: 20150914145329) do
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+>>>>>>> Stashed changes
 
   create_table "operations", force: :cascade do |t|
     t.string   "code"
