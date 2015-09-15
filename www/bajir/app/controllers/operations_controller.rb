@@ -17,9 +17,9 @@ class OperationsController < ApplicationController
     end
 
     def create
-        @operation = Operation.new(operation_params)
+        @operation = Operation.create(operation_params)
         if @operation.save
-            redirect_to @operation
+            redirect_to operations_path
         else
             render 'new'
         end
@@ -29,7 +29,7 @@ class OperationsController < ApplicationController
         @operation = Operation.find(params[:id])
 
         if @operation.update(operation_params)
-            redirect_to @operation
+            redirect_to operations_path
         else
             render 'edit'
         end
@@ -39,7 +39,7 @@ class OperationsController < ApplicationController
         @operation = Operation.find(params[:id])
         @operation.destroy
 
-        redirect_to operation_path
+        redirect_to operations_path
     end
 
 private

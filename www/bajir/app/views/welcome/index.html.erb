@@ -1,8 +1,14 @@
 <h1>BAJIR</h1>
 <p>Welcome to the BAJIR homepage</p>
-<%= link_to 'New Procedure', new_procedure_path %>
-<%= link_to 'All Procedures', controller: 'procedures' %>
-<%= link_to 'Create Questionnaire', new_surveytemplate_path %>
-<%= link_to 'All Questionnaires', controller: 'surveytemplates' %>
-<%= link_to 'Create Operation', new_operation_path %>
-<%= link_to 'All Operations', controller: 'operations' %>
+<div>
+	<%= link_to 'New Procedure', new_procedure_path %>
+	<%= link_to 'All Procedures', controller: 'procedures' %>
+</div>
+<div>
+	<%= link_to 'Create Questionnaire Template', new_surveytemplate_path %>
+	<%= link_to 'All Questionnaires Templates', controller: 'surveytemplates' %>
+</div>
+<div>
+	<%= link_to 'Create Operation', new_operation_path %>
+	<%= link_to 'All Operations', controller: 'operations' %>
+</div>
