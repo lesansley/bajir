@@ -1,0 +1,15 @@
+<p>
+  <strong>Question:</strong>
+  <%= question.question %>
+</p>
+ 
+<p>
+  <strong>answerParameters:</strong>
+  <%= question.answerParameters %>
+</p>
+
+<p>
+  <%= link_to 'Delete Question', [question.surveytemplate, question],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

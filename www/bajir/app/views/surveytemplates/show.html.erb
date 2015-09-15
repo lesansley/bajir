@@ -10,3 +10,5 @@
 
 <%= link_to 'Edit', edit_surveytemplate_path(@surveytemplate) %> |
 <%= link_to 'Back', surveytemplates_path %>
+
+<%= render @surveytemplate.questions %>
