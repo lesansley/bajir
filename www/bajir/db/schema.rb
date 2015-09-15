@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914151405) do
+ActiveRecord::Schema.define(version: 20150914173201) do
 
   create_table "operations", force: :cascade do |t|
     t.string   "code"
@@ -20,12 +20,20 @@ ActiveRecord::Schema.define(version: 20150914151405) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "operations_surveytemplates", id: false, force: :cascade do |t|
+    t.integer "operation_id",      null: false
+    t.integer "surveytemplate_id", null: false
+  end
+
   create_table "procedures", force: :cascade do |t|
     t.string   "tnumber"
     t.date     "procedureDate"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "operation_id"
   end
+
+  add_index "procedures", ["operation_id"], name: "index_procedures_on_operation_id"
 
   create_table "questionlists", force: :cascade do |t|
     t.integer  "surveytemplate_id"
@@ -44,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150914151405) do
     t.integer  "surveytemplate_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "order"
   end
 
   add_index "questions", ["surveytemplate_id"], name: "index_questions_on_surveytemplate_id"
@@ -52,7 +61,6 @@ ActiveRecord::Schema.define(version: 20150914151405) do
     t.string   "username"
     t.string   "type"
     t.date     "date"
-    t.text     "score"
     t.integer  "procedure_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
