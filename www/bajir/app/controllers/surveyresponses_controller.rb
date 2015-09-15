@@ -1,8 +1,36 @@
 class SurveyresponsesController < ApplicationController
-	 def create
+	def index
+		@procedure = Procedure.find(params[:procedure_id])
+	    @surveyresponse = @procedure.surveyresponses.all
+	end
+
+	def show
+	 	@procedure = Procedure.find(params[:procedure_id])
+	    @surveyresponse = @procedure.surveyresponses.find(params[:id])
+	end
+
+	def new
+		@procedure = Procedure.find(params[:procedure_id])
+	    @surveyresponse = @procedure.surveyresponses.new
+	end
+
+	def edit
+
+	end
+
+	def create
 	    @procedure = Procedure.find(params[:procedure_id])
 	    @surveyresponse = @procedure.surveyresponses.create(surveyresponse_params)
-	    redirect_to procedure_path(@procedure)
+
+	    if @surveyresponse.save
+			redirect_to procedure_path(@procedure)
+		else
+			render 'new'
+		end
+	end
+
+	def update
+
 	end
 
 	def destroy
@@ -14,6 +42,6 @@ class SurveyresponsesController < ApplicationController
 
 	private
 	    def surveyresponse_params
-	    params.require(:surveyresponse).permit(:username, :date, :score)
+	    params.require(:surveyresponse).permit(:type, :date)
 	end
 end
