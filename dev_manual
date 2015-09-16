@@ -1,0 +1,11 @@
+Follow instructions as per config_script
+
+In addition:
+
+sudo vi /etc/Apache2/sites-available/000-default.conf
+
+Insert <code>RailsEnv development</code> after DocumentRoot
+
+# Not sure if the step below is necessary
+
+Insert <code>ENV['RAILS_ENV'] = 'development'</code> into /etc/environment
