@@ -5,7 +5,8 @@
   </p>
   <p>
     <%= f.label :type_of_questionnaire %><br>
-    <%= f.text_field :survey %>
+    <%= collection_select(:surveyresponse, :surveytemplate_id, @surveytemplates, :id, :name, {:prompt => false}) %> 
+
   </p>
   <p>
     <%= f.submit %>
