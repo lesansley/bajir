@@ -15,13 +15,18 @@
   <% end %>
  
   <p>
-    <%= f.label :tnumber %><br>
+    <%= f.label :Trust_Number %><br>
     <%= f.text_field :tnumber %>
   </p>
  
   <p>
-    <%= f.label :procedureDate %><br>
+    <%= f.label :Date_of_Procedure %><br>
     <%= f.date_field :procedureDate %>
+  </p>
+
+  <p>
+    <%= f.label :Operation %><br>
+    <%= collection_select(:procedure, :operation_id, @operations, :id, :code) %> 
   </p>
  
   <p>
