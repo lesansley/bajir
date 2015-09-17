@@ -1,3 +1,4 @@
+<h2>Procedure Details</h2>
 <p>
   <strong>T Number:</strong>
   <%= @procedure.tnumber %>
@@ -8,11 +9,23 @@
   <%= @procedure.procedureDate %>
 </p>
 
-<h2>Survey Responses</h2>
-<%= render @procedure.surveyresponses %>
-
-<h2>Add a Survey Response:</h2>
-<%= render 'surveyresponses/form' %>
+<p>
+  <strong>Operation</strong>
+  <%= @procedure.operation_id %> [Need to change this to reflect operation code and description]
+</p>
 
 <%= link_to 'Edit', edit_procedure_path(@procedure) %> |
 <%= link_to 'Back', procedures_path %>
+
+<h3>Completed questionnaires</h3>
+<table>
+	<tr>
+		<th>Questionnaire</th>
+		<th>Date of Completion</th>
+		<th colspan="2"></th>
+	</tr>
+<%= render @procedure.surveyresponses %>
+</table>
+
+<h2>Add a Questionnaire:</h2>
+<%= render 'surveyresponses/form' %>

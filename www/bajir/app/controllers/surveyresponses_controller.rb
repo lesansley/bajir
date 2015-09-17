@@ -1,47 +1,25 @@
 class SurveyresponsesController < ApplicationController
-	def index
-		@procedure = Procedure.find(params[:procedure_id])
-	    @surveyresponse = @procedure.surveyresponses.all
-	end
-
-	def show
-	 	@procedure = Procedure.find(params[:procedure_id])
-	    @surveyresponse = @procedure.surveyresponses.find(params[:id])
-	end
-
-	def new
-		@procedure = Procedure.find(params[:procedure_id])
-	    @surveyresponse = @procedure.surveyresponses.new
-	end
-
 	def edit
-
+  		@procedure = Procedure.find(params[:procedure_id])
+      	@surveyresponse = @procedure.surveyresponses.find(params[:id])
+      	
 	end
 
 	def create
-	    @procedure = Procedure.find(params[:procedure_id])
-	    @surveyresponse = @procedure.surveyresponses.create(surveyresponse_params)
-
-	    if @surveyresponse.save
-			redirect_to procedure_path(@procedure)
-		else
-			render 'new'
-		end
-	end
-
-	def update
-
+		@procedure = Procedure.find(params[:procedure_id])
+		@surveyresponse = @procedure.surveyresponses.create(surveyresponse_params)
+		redirect_to procedure_path(@procedure)
 	end
 
 	def destroy
-	    @procedure = Procedure.find(params[:procedure_id])
-	    @surveyresponse = @procedure.surveyresponses.find(params[:id])
-	    @surveyresponse.destroy
-	    redirect_to procedure_path(@procedure)
-	end
+    @procedure = Procedure.find(params[:procedure_id])
+    @surveyresponse = @procedure.surveyresponses.find(params[:id])
+    @surveyresponse.destroy
+    redirect_to procedure_path(@procedure)
+  end
 
 	private
-	    def surveyresponse_params
-	    params.require(:surveyresponse).permit(:type, :date)
+		def surveyresponse_params
+		params.require(:surveyresponse).permit(:date, :survey)
 	end
 end

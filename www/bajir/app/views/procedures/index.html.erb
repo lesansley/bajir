@@ -14,9 +14,9 @@
       <td><%= procedure.procedureDate %></td>
       <td><%= procedure.operation_id %></td>
       
-      <td><%= link_to 'Show', procedures_path %></td>
-      <td><%= link_to 'Edit', edit_procedure_path %></td>
-      <td><%= link_to 'Destroy', procedures_path,
+      <td><%= link_to 'Show', procedure_path(procedure) %></td>
+      <td><%= link_to 'Edit', edit_procedure_path(procedure) %></td>
+      <td><%= link_to 'Destroy', procedure_path(procedure),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>

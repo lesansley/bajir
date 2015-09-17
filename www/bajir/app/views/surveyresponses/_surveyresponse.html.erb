@@ -1,20 +1,10 @@
-<p>
-  <strong>Type of survey</strong>
-  <%= surveyresponse.type %>
-</p>
 
-<p>
-  <strong>Date of response:</strong>
-  <%= surveyresponse.date %>
-</p>
+	<tr>
+		<td><%= surveyresponse.survey %></td>
+		<td><%= surveyresponse.date %></td>
+		<td><%= link_to 'Edit', edit_procedure_surveyresponse_path(surveyresponse.procedure, surveyresponse) %></td>
+		<td><%= link_to 'Delete', [surveyresponse.procedure, surveyresponse],
+				method: :delete,
+				data: { confirm: 'Are you sure?' } %></td>
+	</tr>
 
- <p>
-  <strong>Score:</strong>
-  <%= surveyresponse.score %>
-</p>
-
-<p>
-  <%= link_to 'Destroy survey response', [surveyresponse.procedure, surveyresponse],
-   method: :delete,
-   data: { confirm: 'Are you sure?' } %>
-</p>
