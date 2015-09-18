@@ -1,31 +1,7 @@
-<%= form_for @operation do |f| %>
+<%= simple_form_for @operation do |f| %>
 
-  <% if @operation.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@operation.errors.count, "error") %> prohibited
-        this operation from being saved:
-      </h2>
-      <ul>
-        <% @operation.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <p>
-    <%= f.label :code %><br>
-    <%= f.text_field :code %>
-  </p>
-
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
+  <%= f.input :code, label: 'Operation Code', error: 'Operation Code is manatory, please specify one' %><br>
+  <%= f.input :description, label: 'Description of the operation' %>
+  <%= f.submit %>
 
 <% end %>
