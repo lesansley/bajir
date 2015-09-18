@@ -1,36 +1,7 @@
-<%= form_for @procedure do |f| %>
+<%= simple_form_for @procedure do |f| %>
  
-  <% if @procedure.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@procedure.errors.count, "error") %> prohibited
-        this procedure from being saved:
-      </h2>
-      <ul>
-        <% @procedure.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :Trust_Number %><br>
-    <%= f.text_field :tnumber %>
-  </p>
- 
-  <p>
-    <%= f.label :Date_of_Procedure %><br>
-    <%= f.date_field :procedureDate %>
-  </p>
-
-  <p>
-    <%= f.label :Operation %><br>
-    <%= collection_select(:procedure, :operation_id, @operations, :id, :code) %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
+  <%= f.input :tnumber, label: 'Unique Trust Number', required: true, error: 'Trust number is mandatory, please specify one' %>
+   <%= f.input :procedureDate, as: :date_picker, label: 'Date',  required: true, error: 'Date is mandatory, please specify one' %>
+  <%= f.button :submit %>
  
 <% end %>
