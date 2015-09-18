@@ -24,6 +24,14 @@ gem 'json'
 gem 'simple_form'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Packages the jQuery UI assets (JavaScripts, stylesheets, and images) for the Rails asset pipeline, so you never have to download a custom package through the web interface again.
+# https://github.com/joliss/jquery-ui-rails
+gem 'jquery-ui-rails'
+# dependency for datetimepicker-rails
+# :github => 'derekprior/momentjs-rails'
+gem 'momentjs-rails', '~> 2.9'
+# Creates date and time fields for the Simple Form
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
