@@ -15,7 +15,7 @@ sudo gem install dotenv
 sudo vi /etc/apache2/sites-enabled/000-default.conf
 
 cd /home/ubuntu/bajir/www/bajir
-bundle install
+bundle install --deployment
 bin/rake db:migrate
 
 RAILS_ENV=production rake secret
