@@ -18,23 +18,23 @@ class ProceduresController < ApplicationController
       @operations = Operation.all
 	end
 
-    def create
-    	@procedure = Procedure.new(procedure_params)
-    	if @procedure.save
-    		redirect_to procedures_path
-    	else
-    		render 'new'
-    	end
-    end
+  def create
+  	@procedure = Procedure.new(procedure_params)
+  	if @procedure.save
+  		redirect_to procedures_path
+  	else
+  		render 'new'
+  	end
+  end
 
-    def update
-  		@procedure = Procedure.find(params[:id])
+  def update
+		@procedure = Procedure.find(params[:id])
 
-  		if @procedure.update(procedure_params)
-    		redirect_to procedures_path
-  		else
-    		render 'edit'
-  		end
+		if @procedure.update(procedure_params)
+  		redirect_to procedures_path
+		else
+  		render 'edit'
+		end
 	end
 
 	def destroy

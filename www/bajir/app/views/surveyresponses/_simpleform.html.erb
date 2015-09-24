@@ -1,0 +1,9 @@
+<%= simple_form_for @surveyresponse  do |f| %>
+
+    <%= f.association :procedure, :label_method => :tnumber, :value_method => :id, label: 'Patient ID', prompt: 'Select the patient T-number' %>
+    <%= f.association :surveytemplate, :value_method => :id, label: 'Type of questionnaire', prompt: 'Select the questionnaire' %>
+    <%= f.input :date, :as => :date_picker, label: 'Completion Date' %>
+
+    <%= f.button :submit , label: 'Continue' %>
+
+<% end %>

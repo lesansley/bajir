@@ -1,7 +1,0 @@
-<%= simple_form_for([@procedure, @procedure.surveyresponses.build])  do |f| %>
- 
-  <%= f.input :date, :as => :date_picker, label: 'Completion Date',  required: true, error: 'Completion date is mandatory, please specify one'%>
-  <%= f.collection_select :surveytemplates_id, Surveytemplate.all, :id, :name, {:prompt => 'Please select the type of survey'} %> 
-  <%= f.button :submit %>
- 
-<% end %>

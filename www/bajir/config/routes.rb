@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   #create a resource
-  resources :procedures do 
-    resources :surveyresponses
-  end
-  
+  resources :procedures
+
+  resources :surveyresponses
+
   resources :answers
 
   resources :surveytemplates do

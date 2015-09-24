@@ -1,26 +1,26 @@
 class SurveyresponsesController < ApplicationController
 	def new
-		@
+		@surveyresponse = Surveyresponse.new
 	end
 
 	def edit
-  		@procedure = Procedure.find(params[:procedure_id])
-      	@surveyresponse = @procedure.surveyresponses.find(params[:id])
+  		@surveyresponse = @procedure.surveyresponses.find(params[:id])
 
 	end
 
 	def create
-		@procedure = Procedure.find(params[:procedure_id])
-		@surveyresponse = @procedure.surveyresponses.create(surveyresponse_params)
-		@surveytemplates = Surveytemplate.all
-		redirect_to procedure_path(@procedure)
+		@surveyresponse = Surveyresponse.new(surveyresponse_params)
+		if @surveyresponse.save
+            redirect_to surveyresponses_path
+        else
+            render 'new'
+        end
 	end
 
 	def destroy
-    @procedure = Procedure.find(params[:procedure_id])
     @surveyresponse = @procedure.surveyresponses.find(params[:id])
     @surveyresponse.destroy
-    redirect_to procedure_path(@procedure)
+    redirect_to surveyresponse_path(@surveyresponse)
   end
 
 	private
