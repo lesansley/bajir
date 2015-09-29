@@ -1,7 +1,8 @@
 <%= simple_form_for @procedure do |f| %>
  
-  <%= f.input :tnumber, label: 'Unique Trust Number', required: true, error: 'Trust number is mandatory, please specify one' %>
-   <%= f.input :procedureDate, :as => :date_picker, label: 'Date',  required: true, error: 'Date is mandatory, please specify one'%>
-  <%= f.button :submit %>
+	<%= f.input :tnumber, label: 'Unique Trust Number', required: true, error: 'Trust number is mandatory, please specify one' %>
+   	<%= f.input :procedureDate, :as => :date_picker, label: 'Date',  required: true, error: 'Date is mandatory, please specify one'%>
+  	<%= f.collection_select :operation_id, Operation.all, :id, :code, {:prompt => 'Please select the type of operation'} %> 
+  	<%= f.button :submit %>
  
-<% end %>
+<% end %>								
