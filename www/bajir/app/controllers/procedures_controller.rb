@@ -46,7 +46,7 @@ class ProceduresController < ApplicationController
 
 private
 	def procedure_params
-		params.require(:procedure).permit(:tnumber, :procedureDate, :operation_id)
+		params.require(:procedure).permit(:tnumber, :procedureDate)
 	end
 
 end

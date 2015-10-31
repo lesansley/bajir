@@ -25,6 +25,12 @@ class SurveyresponsesController < ApplicationController
 
 	private
 		def surveyresponse_params
+<<<<<<< Updated upstream
 		params.require(:surveyresponse).permit(:procedure_id, :date, :surveytemplate_id)
+||||||| merged common ancestors
+		params.require(:surveyresponse).permit(:date, :survey)
+=======
+		params.require(:surveyresponse).permit(:survey, :date)
+>>>>>>> Stashed changes
 	end
 end
