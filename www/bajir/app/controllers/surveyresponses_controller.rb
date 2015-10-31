@@ -11,7 +11,7 @@ class SurveyresponsesController < ApplicationController
 	def create
 		@surveyresponse = Surveyresponse.new(surveyresponse_params)
 		if @surveyresponse.save
-            redirect_to surveyresponses_path
+            render 'edit'
         else
             render 'new'
         end
@@ -25,6 +25,6 @@ class SurveyresponsesController < ApplicationController
 
 	private
 		def surveyresponse_params
-		params.require(:surveyresponse).permit(:date, :survey)
+		params.require(:surveyresponse).permit(:procedure_id, :date, :surveytemplate_id)
 	end
 end

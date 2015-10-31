@@ -1,0 +1,25 @@
+var procedures = new Array();
+<% for procedure in @procedures -%>
+  procedures.push(new Array(<%= procedure.tnumber %>, '<%=h procedure.operation_id %>', <%= procedure.id %>));
+<% end -%>
+
+function patientSelected() {
+  tnumber = $('person_country_id').getValue();
+  options = $('person_procedure_id').options;
+  options.length = 1;
+  procedures.each(function(procedure) {
+    if (procedure[0] == country_id) {
+      options[options.length] = new Option(procedure[1], procedure[2]);
+    }
+  });
+  if (options.length == 1) {
+    $('procedure_field').hide();
+  } else {
+    $('procedure_field').show();
+  }
+}
+
+document.observe('dom:loaded', function() {
+  countrySelected();
+  $('person_country_id').observe('change', countrySelected);
+});
